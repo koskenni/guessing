@@ -1,0 +1,208 @@
+Multichar_Symbols
+  {ao}  {aoe}  {aoØe}  {aä}  {aØ}  {aØe}  {C}  {dlnrtØ}  {eiØ}  {eØ}  {ie}
+  {i}  {ij}  {iØ}  {kg}  {kj}  {kv}  {kØ}  {kØ'}  {nlrs}  {nt}  {oö}
+  {pm}  {pv}  {pØ}  {td}  {tds}  {tl}  {tls}  {tn}  {tns}  {tr}  {trs}  {tØ}
+  {uy}  {uØ}  {V}  {VØ}  {yØ}  {äØ}  {äØe}  {Øt} 
+  /v  lä-hte/v  kä-y/v  haravo-i/v  vali-tse/v  juo-kse/v  nä-ke/v
+  ale-ne/v  sala-V/v  katke-A/v  selvi-A/v  koho-A/v  halu-A/v
+  pala-V/v  kih-ise/v  öl-ise/v  rake-ntA/v
+  +INF1
+
+Definitions
+  Vow = [a | e | i | o | u | y | ä | ö] ;
+  VowEnd = [o | u | y | ö | %{aoe%}] ;
+  VowEndØ = [%{aØe%} | %{eØ%} | %{iØ%} | %{äØe%} | %{eiØ%} | %{iØ%} | %{äØe%}] ;
+  Cons = [b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|z] ;
+  ConsGrad =  [(l|r|n) k %{kØ%} | (l|r) %{kØ%} | n %{kg%} | m %{pm%} | (l|r) %{pv%} | (l|r|m) p %{pØ%} | (h) %{td%} | l %{tl%} | n %{tn%} | r %{tr%} | (l|r|n) t %{tØ%}] ;
+  ConsGradts = [ l %{tls%} | n %{tns%} | r %{trs%}] ;
+
+!  %{aoØe%} | -- kaihti, laitti, taitti - NS V10 sallii, tässä ei
+
+LEXICON Root
+<Cons* Vow+ (Cons+ Vow+)* [Cons* | ConsGrad] VowEnd> /v ; ! V01,09-10
+<Cons* Vow+ (Cons+ Vow+)* [Cons+ | ConsGrad] [%{aØe%} | %{äØe%}]> /v ; ! V02-04
+<Cons* Vow+ (Cons+ Vow+)* ConsGradts [%{aØe%} | %{äØe%}]> /v ;! V05-08
+<Cons [a|i|a a|a i] [Cons+ | ConsGrad] %{aoØe%}> /v ; ! V11 paistaa
+<Cons a a r %{trs%} %{aoØe%}> /v ; ! V12 saartaa
+<(Cons) Vow+ [Cons+ | ConsGrad] %{eiØ%}> /v ; ! V13 laskea
+tun{tn}{eiØ} /v ; ! V14
+po{td}{eiØ} /v ; ! V15
+lä lä-hte/v ; ! V16
+<Cons* Vow+ (Cons+ Vow+) [Cons+ | ConsGrad] %{iØ%}> /v ; ! V17 sallia
+<Cons* Vow+ (Cons+ Vow+)* Cons+ [a|o|u|ö] %{iØ%}> /v ; ! V18 naida, uida, voida
+sa{VØ} /v ; ! V19
+jä{VØ} /v ; ! V19
+my{VØ} /v ; ! V20
+<Cons [%{uØ%} o | %{yØ%} ö] > /v ; ! V21
+v{iØ}e /v ; ! V22
+kä kä-y/v ; ! V23
+<Cons* Vow+ Cons* (a|ä) i s %{eØ%}> /v ; ! V24 nuolaista
+ran{kg}ais{eØ} /v ; ! V24
+kus%{eØ%} /v ; ! V24
+nous%{eØ%} /v ; ! V24
+les%{eØ%} /v ; ! V24
+pes%{eØ%} /v ; ! V24
+seiso% /v:seis v3 ; ! V24
+pääs%{eØ%} /v ; ! V24
+<Cons Vow+ [l|r|n] %{eØ%}> /v ; ! V25-27 kuolla, purra, mennä
+<Cons* Vow+ (Cons+ Vow+) [Cons+ | ConsGrad] [e|i] l  %{eØ%}> /v ; ! V28
+<Cons* Vow+ Cons+ Vow i l %{eØ%}> /v ; ! V29
+<[Cons* Vow+]^{2,4} Cons* [o|ö]> haravo-i/v ; ! V30
+<[Cons* Vow+]^{1,3} Cons* i> vali-tse/v ; ! V31
+juo-kse/v:juo juo-kse/v ; ! V32
+pie juo-kse/v ; ! V32
+syö juo-kse/v ; ! V32
+nä nä-ke/v ; ! V33
+te nä-ke/v ; ! V33
+<Cons* Vow+ (Cons+ Vow+) [Cons+|ConsGrad] [a|ä|e]> ale-ne/v ; ! V34
+<Cons* Vow+ (Cons+ Vow+) [h %{kj%} | l %{kj%} | r %{kj%}] e> ale-ne/v ; ! V34
+<Cons* Vow+ [Cons+|ConsGrad] [a|ä]> sala-V/v ; ! V35
+<Cons* Vow+ [Cons+|ConsGrad|h %{kj%}|l %{kj%}|r %{kj%}] e> katke-A/v ; ! V36
+<Cons* Vow+ [Cons+|ConsGrad] i>    selvi-A/v ; ! V37
+<Cons* Vow+ [Cons+|ConsGrad] [o|ö]> koho-A/v ; ! V38
+<Cons* Vow+ [Cons+|ConsGrad] [u|y]> halu-A/v ; ! V39
+<Cons* Vow+ [Cons+|ConsGrad] [a|ä]> pala-V/v ; ! V40 > V35
+<Cons* [a|i|o|u] Cons+> kih-ise/v ; ! V41 kihistä-kihajaa
+<Cons* [e|y|ä|ö] Cons+> öl-ise/v ; ! V41 
+tai tai-tA/v ; ! V43
+tie tai-tA/v ; ! V43
+
+LEXICON Clit
+ End;
+LEXICON Poss
+ Clit;
+LEXICON PossObl
+:ni Clit;
+:si Clit;
+:mme Clit;
+:nne Clit;
+:{V} Clit; ! estä kolmnikertaiset vokaalit
+LEXICON v0
+ Person;
+ neg;
+:{C} Clit;
+LEXICON v1
+:{i} Person;
+:{i} neg;
+LEXICON v2
+:isi Person;
+:isi neg;
+LEXICON v3
+:{nlrs}e Person;
+:{nlrs}e neg;
+:k{aä}{aä} Clit;
+:{dlnrtØ}{C}{aä} neg4pe;
+:{Øt}tiin Clit;
+:{Øt}t{aä}isi neg4pe;
+:{Øt}t{aä}ne neg4pe;
+:{Øt}t{aä}k{oö} neg4pe;
+% INF1:{dlnrtØ}{aä} Clit;
+:{dlnrtØ}{aä}kse PossObl;
+:{dlnrtØ}ess{aä} Poss;
+:{dlnrtØ}en Clit;
+:{Øt}t{aä}ess{aä} Clit;
+:{Øt}t{aä}m{aä}n Clit;
+:{nlrs}{uy}t Clit;
+:{Øt}{tØ}{uy} Clit;
+LEXICON v0123
+ v0;
+ v1;
+ v2;
+ v3;
+LEXICON v012
+ v0;
+ v1;
+ v2;
+LEXICON v02
+ v0;
+ v2;
+LEXICON v03
+ v0;
+ v3;
+LEXICON v12
+ v1;
+ v2;
+LEXICON v13
+ v1;
+ v3;
+LEXICON /v
+% /v: v0123;
+LEXICON lä-hte/v
+% lä-hte/v:h{td}{eiØ} v0123;
+% lä-hte/v:ks v12;
+LEXICON kä-y/v
+% kä-y/v:y v03;
+% kä-y/v:v v12;
+LEXICON haravo-i/v
+% haravo-i/v:{iØ} v0123;
+% haravo-i/v:its{eØ} v012;
+% haravo-i/v:i{nt} v3;
+LEXICON vali-tse/v
+% vali-tse/v:ts{eØ} v012;
+% vali-tse/v:tse v2;
+% vali-tse/v:{nt} v3;
+LEXICON juo-kse/v
+% juo-kse/v:ks{eØ} v012;
+% juo-kse/v:s v3;
+LEXICON nä-ke/v
+% nä-ke/v:k{eØ} v012;
+% nä-ke/v:h v3;
+LEXICON ale-ne/v
+% ale-ne/v:n{eØ} v012;
+% ale-ne/v:{nt} v3;
+LEXICON sala-V/v
+% sala-V/v:{VØ} v02;
+% sala-V/v:s v1;
+% sala-V/v:{nt} v3;
+LEXICON katke-A/v
+% katke-A/v:{aä} v02;
+% katke-A/v:{VØ} v02;
+% katke-A/v:s v1;
+% katke-A/v:{nt} v3;
+LEXICON selvi-A/v
+% selvi-A/v:{aä} v02;
+% selvi-A/v:{VØ} v02;
+% selvi-A/v:s v1;
+% selvi-A/v:{nt} v3;
+LEXICON koho-A/v
+% koho-A/v:{aä} v02;
+% koho-A/v:{VØ} v02;
+% koho-A/v:s v1;
+% koho-A/v:{nt} v3;
+LEXICON halu-A/v
+% halu-A/v:{aä} v02;
+% halu-A/v:s v1;
+% halu-A/v:{nt} v3;
+LEXICON pala-V/v
+% pala-V/v:{VØ} v02;
+% pala-V/v:s v1;
+% pala-V/v:{nt} v3;
+% pala-V/v:j{aä} v02;
+LEXICON kih-ise/v
+% kih-ise/v:is{eØ} v012;
+% kih-ise/v:is v3;
+% kih-ise/v:aj{aØ} v012;
+LEXICON öl-ise/v
+% öl-ise/v:is{eØ} v012;
+% öl-ise/v:is v3;
+% öl-ise/v:äj{äØ} v012;
+LEXICON rake-ntA/v
+% rake-ntA/v:n{tn}{aäeØ} v0;
+% rake-ntA/v:n{tn}{aäeØ} v2;
+% rake-ntA/v:n{tn}{aäeØ} v3;
+% rake-ntA/v:ns v1;
+% rake-ntA/v:{nt} v3;
+LEXICON neg4pe
+ neg;
+ 4pe;
+LEXICON 4pe
+:{V}n Clit;
+LEXICON Person
+:n Clit;
+:t Clit;
+:{VØ} Clit;
+:mme Clit;
+:tte Clit;
+:v{aä}t Clit;
+LEXICON End
+ #;
