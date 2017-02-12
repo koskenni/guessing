@@ -1,0 +1,71 @@
+KSK:n ja NSSL: taivutusluokkien vastaavuus
+==========================================
+
+V24 ==> 66 (nuolaista)
+
+V35 ==> 73 (salata)
+
+V37 ==> 75 (selvitä, selviän, selviin)
+
+V38 (77 kpl: kohota, kohoan, kohoon)
+V38 => 75 (3 kpl: aallota, muodota, peitota)
+V38 => 72 (1 kpl: isota)
+V38 => 74 (69 kpl, kaikki muut)
+
+V39 => 75 (poikkeukset: haluta, hamuta, hulmuta, kohuta, lastuta,
+liesuta, loimuta, loiskuta, meluta, nujuta, piiluta)
+
+V39 => 74 (poikkeuksina: hymytä, hyrskytä, syyhytä, tähytä, öljytä)
+
+V39 & uta => 74 (53 kpl, muut)
+
+V39 & ytä => 75 (27 kpl, muut)
+
+V40 ==> 73 (palata, palajaa)
+
+V41 ==> 66 (kihistä, kihajaa, kihaji)
+
+---
+
+01 & kaksitav. ==> S01
+01 & kolmitav. ==> S02
+
+02 ==> S02
+
+03 ==> S03
+
+04 ==> S02 (kk[oö] - laatikko, laatikkoihin, laatikoihin)
+
+05 & i$ & kaksi- tai nelitav. => S04
+05 & i$ & kolmitav. => S05
+05 & i$ & vierasper & kolmi- tai nelitav. => S06
+05 & C$ & vierasper => S07
+
+06 & V$ & kotoper => S05
+06 & V$ & vierasper => S06
+06 & C$ => S07
+
+07 => S08
+07 haahti => S34
+07 hapsi => S46
+07 suksi => S49
+07 uksi =>S50
+
+08 => S09
+
+66 (258 kpl)
+66 & [aä]ist[aä] ==> V24 (168 kpl)
+66 & [^âä]ist[aä] ==> V41 (94 kpl)
+
+73 (686 kpl) => V35 (677 kpl) | V40 (11 kpl: avata, halata, herätä,
+hylätä, hyljätä, kaivata, konkata, levätä, palata, pauhata, varata)
+
+74 (164 kpl: katketa, katkeaisi, katkeisi)
+74 & et[aä] ==> V36 (42 kpl)
+74 & [oö]t[aä] ==> V38 (69 kpl)
+74 & [uy]t[aä] ==> V39 (53 kpl)
+
+75 (46 kpl)
+75 & it[aä] ==> V37 (15 kpl)
+75 & ot[aä] ==> V38 (3 kpl: aallota, muodota, peitota)
+75 & ut[aä] ==> V39 (27 kpl)
