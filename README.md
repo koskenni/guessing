@@ -1,4 +1,7 @@
-# guessing
+# guessing (obsolete)
+
+This repository is now **obsolete and will be deleted in near future**. The relevant stuff can be found in either *pytwolc* or in *twolex* repository.
+
 Guessing lexicon entries using an open lexicon using regular expressions
 
 Using hfst-lexc one can create a lexicon which has regular expressions instead of explicit root or stems. Such an open lexicon will produce ambiguous analyses, i.e. often several possible entries which could exist but not necessarily do exist. Such an open lexicon is operational with a rule grammar just as a normal lexicon.
