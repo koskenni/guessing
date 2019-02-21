@@ -15,6 +15,9 @@ rul.m2s.fst : rul.m2s.twolc
 delete.fst :
 	echo 'Ø -> 0' | hfst-regexp2fst > $@
 
+sktp-guesser.fst: sktp-2plus.fst ../twolex/fin-guess.fst ../twolex/guesser.fst Makefile
+	hfst-compose -2 $< -1 ../twolex/fin-guess.fst -o $@
+
 sktp-r.words: sktp-all.words
 	egrep '^r[a-zäöšž]+$' sktp-all.words > sktp-r.words
 
